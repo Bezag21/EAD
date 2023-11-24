@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Delete Employee</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	  <nav>
+        <ul>
+            <li><a href="add_employee.html">ADD</a></li>
+            <li><a href="ViewEmployeesServlet">VIEW</a></li>
+            <li><a href="edit_employee.html">EDIT</a></li>
+        </ul>
+    </nav>
+    <h1>Edit Employee</h1>
+    <form action="DeleteEmployeeServlet" method="post">
+     
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name">
+        <br><br>
+        <br><br>
+        <input type="submit" value="Delete Employee">
+    </form>
+</body>
+</html>
