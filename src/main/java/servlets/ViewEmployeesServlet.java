@@ -43,7 +43,7 @@ public class ViewEmployeesServlet extends HttpServlet {
             }
 
             // Read the employees.html file
-            BufferedReader reader = new BufferedReader(new FileReader("C://Users/word/eclipse-workspace/Employee_management/src/main/webapp/view_employees.html"));
+            BufferedReader reader = new BufferedReader(new FileReader("src/main/webapp/view_employees.html"));
             String line;
             StringBuilder htmlContent = new StringBuilder();
             while ((line = reader.readLine()) != null) {
