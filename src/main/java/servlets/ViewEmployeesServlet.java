@@ -16,7 +16,7 @@ import jakarta.servlet.http.HttpServletResponse;
 public class ViewEmployeesServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        
+
         Connection connection = null;
         Statement statement = null;
         ResultSet resultSet = null;
@@ -30,20 +30,22 @@ public class ViewEmployeesServlet extends HttpServlet {
             // Creating the HTML table dynamically
             StringBuilder tableHtml = new StringBuilder();
             while (resultSet.next()) {
-//                int id = resultSet.getInt("id");
+                int id = resultSet.getInt("id");
                 String name = resultSet.getString("name");
                 String salary = resultSet.getString("salary");
                 String designation = resultSet.getString("designation");
                 tableHtml.append("<tr>");
-//                tableHtml.append("<td>").append(id).append("</td>");
+                tableHtml.append("<td>").append(id).append("</td>");
                 tableHtml.append("<td>").append(name).append("</td>");
                 tableHtml.append("<td>").append(salary).append("</td>");
                 tableHtml.append("<td>").append(designation).append("</td>");
+                tableHtml.append("<td><a  style=\"color: white; background-color:   #4CAF50; padding: 5px 10px; border-radius: 5px; text-decoration: none;\"class=\"update-button\" href=\"edit_employee.html?id=").append(id).append("\">Update</a></td>");
+                tableHtml.append("<td > <a  style= \"color: white; background-color: red; padding: 5px 10px; border-radius: 5px; text-decoration: none;\"href=\"DeleteEmployeeServlet?id=").append(id).append("\">Delete</a></td>");
                 tableHtml.append("</tr>");
             }
 
             // Read the employees.html file
-            BufferedReader reader = new BufferedReader(new FileReader("src/main/webapp/view_employees.html"));
+            BufferedReader reader = new BufferedReader(new FileReader("C://Users/word/eclipse-workspace/Employee_management/src/main/webapp/view_employees.html"));
             String line;
             StringBuilder htmlContent = new StringBuilder();
             while ((line = reader.readLine()) != null) {
@@ -54,15 +56,15 @@ public class ViewEmployeesServlet extends HttpServlet {
                 }
             }
             reader.close();
-
+// set the content type of the response
             response.setContentType("text/html");
 
-          
+  //write the HTML content to the response
             response.getWriter().println(htmlContent.toString());
         } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
         } finally {
-           
+
             if (resultSet != null) {
                 try {
                     resultSet.close();
