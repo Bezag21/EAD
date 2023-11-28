@@ -12,16 +12,16 @@ import jakarta.servlet.http.HttpServletResponse;
 
 
 public class DeleteEmployeeServlet extends HttpServlet {
-    @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-    	request.getRequestDispatcher("delete_employee.html").include(request, response);
+//    @Override
+//    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+//    	request.getRequestDispatcher("delete_employee.html").include(request, response);
+//
+//    }
 
-    }
-
     @Override
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        
-    	String name = request.getParameter("name");
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+    	String id = request.getParameter("id");
         Connection connection = null;
         PreparedStatement statement = null;
         try {
@@ -31,9 +31,9 @@ public class DeleteEmployeeServlet extends HttpServlet {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-            String sql = "DELETE FROM employees WHERE name=?";
+            String sql = "DELETE FROM employees WHERE id=?";
             statement = connection.prepareStatement(sql);
-            statement.setString(1, name);
+            statement.setString(1, id);
             statement.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
@@ -56,7 +56,7 @@ public class DeleteEmployeeServlet extends HttpServlet {
         	}
         }
 
-       
+
         response.sendRedirect("ViewEmployeesServlet");
     }
 }
