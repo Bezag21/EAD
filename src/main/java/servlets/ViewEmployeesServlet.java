@@ -39,7 +39,7 @@ public class ViewEmployeesServlet extends HttpServlet {
                 tableHtml.append("<td>").append(name).append("</td>");
                 tableHtml.append("<td>").append(salary).append("</td>");
                 tableHtml.append("<td>").append(designation).append("</td>");
-                tableHtml.append("<td><a  style=\"color: white; background-color:   #4CAF50; padding: 5px 10px; border-radius: 5px; text-decoration: none;\"class=\"update-button\" href=\"edit_employee.html?id=").append(id).append("\">Update</a></td>");
+                tableHtml.append("<td><a  style=\"color: white; background-color:   #4CAF50; padding: 5px 10px; border-radius: 5px; text-decoration: none;\"class=\"update-button\" href=\"EditEmployeeServlet?id=").append(id).append("\">Update</a></td>");
                 tableHtml.append("<td > <a  style= \"color: white; background-color: red; padding: 5px 10px; border-radius: 5px; text-decoration: none;\"href=\"DeleteEmployeeServlet?id=").append(id).append("\">Delete</a></td>");
                 tableHtml.append("</tr>");
             }
