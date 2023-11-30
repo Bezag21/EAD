@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Employee</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+  
+</head>
+<body>
+	  <nav>
+        <ul>
+            <li><a href="ViewEmployeesServlet">VIEW</a></li>
+        </ul>
+    </nav>
+    <h1>Add Employee</h1>
+     
+    <form action="AddEmployeeServlet" method="post">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name">
+        <br><br>
+        <label for="designation">Designation:</label>
+        <input type="text" id="designation" name="designation">
+        <br><br>
+        <label for="salary">Salary:</label>
+        <input type="text" id="salary" name="salary">
+        <br><br>
+        <input type="submit" value="Add Employee">
+    </form>
+</body>
+</html>
