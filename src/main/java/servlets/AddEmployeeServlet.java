@@ -37,7 +37,7 @@ protected void doPost(HttpServletRequest request, HttpServletResponse response) 
 			try {
 				connection =  DatabaseConnection.getConnection();
 			} catch (ClassNotFoundException e) {
-				// TODO Auto-generated catch block
+				
 				e.printStackTrace();
 			}
 
