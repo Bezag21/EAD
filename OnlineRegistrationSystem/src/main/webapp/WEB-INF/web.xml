@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="https://jakarta.ee/xml/ns/jakartaee" xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd" id="WebApp_ID" version="6.0">
+  <display-name>OnlineRegistrationSystem</display-name>
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+  <servlet>
+    <servlet-name>registration</servlet-name>
+    <servlet-class>servlet.RegistrationServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>registration</servlet-name>
+    <url-pattern>/register</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>LoginServlet</servlet-name>
+    <servlet-class>servlet.LoginServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LoginServlet</servlet-name>
+    <url-pattern>/LoginServlet</url-pattern>
+  </servlet-mapping>
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+  <servlet>
+    <description></description>
+    <display-name>DatabaseConnection</display-name>
+    <servlet-name>DatabaseConnection</servlet-name>
+    <servlet-class>servlet.DatabaseConnection</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DatabaseConnection</servlet-name>
+    <url-pattern>/DatabaseConnection</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>DatabaseConnectionn</display-name>
+    <servlet-name>DatabaseConnectionn</servlet-name>
+    <servlet-class>servlet.DatabaseConnection</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DatabaseConnectionn</servlet-name>
+    <url-pattern>/DatabaseConnectionn</url-pattern>
+  </servlet-mapping>
+</web-app>
